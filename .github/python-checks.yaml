@@ -11,8 +11,7 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-jobs:
-  code-checks:
+  code-checks23:
     runs-on: ubuntu-latest
 
     steps:
@@ -20,8 +19,7 @@ jobs:
         uses: actions/setup-python@v2
         with:
           python-version: 3.x
-jobs:
-  code-checks:
+  code-checks0:
     runs-on: ubuntu-latest
 
     steps:
@@ -29,36 +27,31 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install pylint ruff black bandit pytype
-jobs:
-  code-checks:
+  code-checks1:
     runs-on: ubuntu-latest
 
     steps:
       - name: Run Pylint
         run: pylint --exit-zero .
-jobs:
-  code-checks:
+  code-checks2:
     runs-on: ubuntu-latest
 
     steps:
       - name: Run Ruff
         run: ruff .
-jobs:
-  code-checks:
+  code-checks3:
     runs-on: ubuntu-latest
 
     steps:
       - name: Run Black
         run: black --check . || echo "Black check failed. Running Black to apply changes..." && black .
-jobs:
-  code-checks:
+  code-checks4:
     runs-on: ubuntu-latest
 
     steps:
       - name: Run Bandit
         run: bandit -r .
-jobs:
-  code-checks:
+  code-checks5:
     runs-on: ubuntu-latest
 
     steps:
