@@ -1,0 +1,90 @@
+name: Python Code Checks
+on:
+  push:
+    branches:
+      - '*'
+
+jobs:
+  code-checks:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+  code-checks23:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.x
+  code-checks0:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.x
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pylint ruff black bandit pytype
+      
+  code-checks1:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.x
+      - name: Run Pylint
+        run: pylint --exit-zero .
+      
+  code-checks2:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.x
+      - name: Run Ruff
+        run: ruff .
+      
+  code-checks3:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.x
+      - name: Run Black
+        run: black --check . || echo "Black check failed. Running Black to apply changes..." && black .
+      
+  code-checks4:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.x
+      - name: Run Bandit
+        run: bandit -r .
+      
+  code-checks5:
+    runs-on: ubuntu-latest
+
+    steps:
+     - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.x
+      - name: Run Pytype
+        run: pytype .
+     
+
