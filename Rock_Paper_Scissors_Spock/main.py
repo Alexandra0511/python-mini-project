@@ -1,3 +1,4 @@
+"""rock paper scissors"""
 import random
 
 # WINNING PATTERNS
@@ -12,20 +13,22 @@ win = [("scissors","paper"), ("paper","rock"), ("rock","lizard"),
        ("rock","scissors")]
 
 # INSTRUCTIONS
-print("There are 6 rounds.\nYou are playing against Computron.\nYou will win if you have a higher point.\nEnter scissors, paper, rock, lizard or Spock.\nLIVE LONG AND PROSPER🖖\n")
+print("There are 6 rounds.\nYou are playing against Computron.\n"
+    + "You will win if you have a higher point.\nEnter scissors, paper, rock, lizard or Spock.\n"
+    + "LIVE LONG AND PROSPER🖖\n")
 
 # CHOICES FOR THE COMPUTRON TO CHOOSE FROM
 choices = ["scissors", "paper", "rock", "lizard", "Spock"]
 
 # TO COUNT THE NUMBER OF ROUNDS
-count = 0
+COUNT = 0
 # TO COUNT THE PLAYER'S POINTS
-playerPoints = 0
+PLAYERPOINTS = 0
 # TO COUNT THE COMPUTRONS' POINTS
-computerPoints = 0
+COMPUTERPOINTS = 0
 
 # WHILE LOOP TO SET THE NUMBER OF ROUNDS
-while count != 6:
+while COUNT != 6:
     # INPUT FOR PLAYER'S CHOICE
     player = input("What is your move? ")
     # COMPUTRON RANDOMLY SELECT CHOICE FROM CHOICES LIST
@@ -60,7 +63,7 @@ while count != 6:
                 print("Spock vapourizes rock \nYou Won!")
             elif playerWins == win[9]:
                 print("Rock crushes scissors \nYou Won!")
-            playerPoints += 1
+            PLAYERPOINTS += 1
         elif computerWins in win:
             if computerWins == win[0]:
                 print("Scissors cuts paper \nComputron Wins!")
@@ -82,28 +85,28 @@ while count != 6:
                 print("Spock vapourizes rock \nComputron Wins!")
             elif computerWins == win[9]:
                 print("Rock crushes scissors \nComputron Wins!")
-            computerPoints += 1
+            COMPUTERPOINTS += 1
         # PLAYER DID NOT INPUT scissors, paper, rock, lizard or Spock
         else:
             print("Invalid response \nComputron Wins!")
-            computerPoints += 1
+            COMPUTERPOINTS += 1
 
     # DRAW, SAME CHOICES
     elif player == computer:
         print("Draw, Player and Computron gets 1 point")
-        playerPoints += 1
-        computerPoints += 1
+        PLAYERPOINTS += 1
+        COMPUTERPOINTS += 1
 
     # EMPTY LINE FOR A NEATER/CLEARER VIEW
     print("")
 
     # INCREMENT TO CONTROL THE NUMBER OR ROUNDS
-    count += 1
+    COUNT += 1
 
 # COMPARISON TO DETERMINE WHO IS THE CHAMPION
-if playerPoints > computerPoints:
+if PLAYERPOINTS > COMPUTERPOINTS:
     print("You are the champion! 🏆")
-elif playerPoints == computerPoints:
+elif PLAYERPOINTS == COMPUTERPOINTS:
     print("You are both champions!! 🏆🏆")
 else:
     print("Computron is the champion, Try Again! 💻")
