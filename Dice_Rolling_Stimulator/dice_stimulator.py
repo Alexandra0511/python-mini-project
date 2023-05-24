@@ -4,7 +4,7 @@ import random
 print("This is a dice stimulator")
 X = "y"
 while X == "y":
-    number = random.randint(1,6)
+    number = random.randint(1, 6)
 
     if number == 1:
         print("===========")
@@ -48,4 +48,4 @@ while X == "y":
         print("| O     O |")
         print("===========")
 
-    X =  input("Press y to roll again ")
+    X = input("Press y to roll again ")
