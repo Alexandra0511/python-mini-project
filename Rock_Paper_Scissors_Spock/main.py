@@ -23,8 +23,8 @@ win = [
 
 # INSTRUCTIONS
 print(
-    "There are 6 rounds.\nYou are playing against Computron.\n"
-    + "You will win if you have a higher point.\nEnter scissors, paper,"
+    "There are 6 rounds.\nYou are playing against Computron.\n\
+    You will win if you have a higher point.\nEnter scissors, paper,"
     + "rock, lizard or Spock.\n"
     + "LIVE LONG AND PROSPER🖖\n"
 )
