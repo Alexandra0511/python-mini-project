@@ -1,5 +1,5 @@
 """rock paper scissors"""
-import random
+from random import SystemRandom
 
 # WINNING PATTERNS
 # Scissors cuts Paper, Paper covers Rock, Rock crushes Lizard,
@@ -7,16 +7,27 @@ import random
 # Lizard eats Paper, Paper disproves Spock, Spock vaporizes Rock,
 # Rock crushes Scissors
 
-win = [("scissors","paper"), ("paper","rock"), ("rock","lizard"),
-       ("lizard","Spock"), ("Spock","scissors"), ("scissors","lizard"),
-       ("lizard","paper"), ("paper","Spock"), ("Spock","rock"),
-       ("rock","scissors")]
+CRYPTO_GEN = SystemRandom()
+win = [
+    ("scissors", "paper"),
+    ("paper", "rock"),
+    ("rock", "lizard"),
+    ("lizard", "Spock"),
+    ("Spock", "scissors"),
+    ("scissors", "lizard"),
+    ("lizard", "paper"),
+    ("paper", "Spock"),
+    ("Spock", "rock"),
+    ("rock", "scissors"),
+]
 
 # INSTRUCTIONS
-print("There are 6 rounds.\nYou are playing against Computron.\n"
+print(
+    "There are 6 rounds.\nYou are playing against Computron.\n"
     + "You will win if you have a higher point.\nEnter scissors, paper,"
     + "rock, lizard or Spock.\n"
-    + "LIVE LONG AND PROSPER🖖\n")
+    + "LIVE LONG AND PROSPER🖖\n"
+)
 
 # CHOICES FOR THE COMPUTRON TO CHOOSE FROM
 choices = ["scissors", "paper", "rock", "lizard", "Spock"]
@@ -33,18 +44,18 @@ while COUNT != 6:
     # INPUT FOR PLAYER'S CHOICE
     player = input("What is your move? ")
     # COMPUTRON RANDOMLY SELECT CHOICE FROM CHOICES LIST
-    computer = random.choice(choices)
+    computer = CRYPTO_GEN.choice(choices)
     # UNCOMMENT THE LINE BELOW IF YOU WISH TO SEE COMPUTRONS' CHOICE
-    #print(computer)
+    # print(computer)
 
     # DIFFERENT CHOICES
     if player != computer:
         # CHECK FOR PATTERNS
-        playerWins = (player,computer)
-        computerWins = (computer,player)
+        playerWins = (player, computer)
+        computerWins = (computer, player)
         if playerWins in win:
             if playerWins == win[0]:
-                #print("✂ cuts 📃 \nYou Won!")
+                # print("✂ cuts 📃 \nYou Won!")
                 print("Scissors cuts paper \nYou Won!")
             elif playerWins == win[1]:
                 print("Paper covers rock \nYou Won!")
