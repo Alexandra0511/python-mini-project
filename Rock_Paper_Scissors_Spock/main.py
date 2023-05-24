@@ -14,7 +14,8 @@ win = [("scissors","paper"), ("paper","rock"), ("rock","lizard"),
 
 # INSTRUCTIONS
 print("There are 6 rounds.\nYou are playing against Computron.\n"
-    + "You will win if you have a higher point.\nEnter scissors, paper, rock, lizard or Spock.\n"
+    + "You will win if you have a higher point.\nEnter scissors, paper,"
+    + "rock, lizard or Spock.\n"
     + "LIVE LONG AND PROSPER🖖\n")
 
 # CHOICES FOR THE COMPUTRON TO CHOOSE FROM
